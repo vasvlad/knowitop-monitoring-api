@@ -57,10 +57,10 @@ class MonitoringServices implements iRestServiceProvider
 				$iAlarmState = (int)RestUtils::GetMandatoryParam($oParams, 'state');
 				$sAlarmMessage = RestUtils::GetMandatoryParam($oParams, 'message');
 				$sItopClass = RestUtils::GetOptionalParam($oParams, 'class', 'Incident');
-			        $sDescription = RestUtils::GetOptionalParam($oParams, 'description', $sAlarmMessage);
+		        $sDescription = RestUtils::GetOptionalParam($oParams, 'description', $sAlarmMessage);
 				// $aAlarmFields = (array)RestUtils::GetOptionalParam($oParams, 'fields', array());
 
-				$aContextConfig = utils::GetCurrentModuleSetting($sContextName, array());
+				$aContextConfig = utils::GetCurrentModuleSetting2($sContextName, array());
 				// $aContextConfig = $aConfig[$sContextName];
 				if (empty($aContextConfig) || !is_array($aContextConfig))
 				{
